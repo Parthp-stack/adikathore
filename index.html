@@ -1,0 +1,772 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>WellFit Creation | Tailoring Orders & Measurements</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Linked Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <main class="app-shell">
+
+    <!-- LEFT BRAND PANEL -->
+    <aside class="brand-panel">
+
+      <div class="brand-mark" id="brand-home" title="Go to New Order" role="button" tabindex="0">
+        <span>W</span>
+        WellFit Creation
+      </div>
+
+      <div class="brand-message">
+
+        <p class="eyebrow">SAWARGAON MAL</p>
+
+        <h1>
+          Every stitch
+          <br>
+          <em>fits the story.</em>
+        </h1>
+
+        <p class="brand-copy">
+          A calm, precise way to capture measurements, manage clients,
+          and make custom clothing feel effortless.
+        </p>
+
+        <p class="location-line">
+          Sawargaon Mal, Tq. Sindkhed Raja, Maharashtra
+        </p>
+
+      </div>
+
+      <div class="brand-footer">
+        <span class="status-dot"></span>
+        <span id="brand-status-text">Your craft, organized</span>
+      </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT PANEL -->
+    <section class="content-panel">
+
+      <!-- TOP PROGRESS NAVIGATION -->
+      <nav class="progress-line" aria-label="Order progress navigation">
+
+        <button class="progress-step active" id="progress-new" type="button">
+          <span>01</span>
+          New order
+        </button>
+
+        <div class="line" aria-hidden="true"></div>
+
+        <button class="progress-step" id="progress-orders" type="button">
+          <span>02</span>
+          All client orders (<span id="nav-order-count">0</span>)
+        </button>
+
+      </nav>
+
+
+      <!-- =========================
+           01: NEW ORDER VIEW
+      ========================== -->
+      <section
+        id="order-view"
+        class="view active-view"
+        aria-labelledby="order-title"
+      >
+
+        <div class="order-header">
+
+          <div class="form-intro">
+
+            <p class="eyebrow" id="order-number">
+              ORDER WF-001
+            </p>
+
+            <h2 id="order-title">
+              New client order
+            </h2>
+
+            <p>
+              Capture the client details & exact measurements once. Make the fit memorable.
+            </p>
+
+          </div>
+
+          <div class="header-actions">
+
+            <button
+              class="text-button"
+              id="view-orders"
+              type="button"
+            >
+              All client orders →
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <!-- ORDER FORM -->
+        <form id="order-form" class="order-form" autocomplete="off">
+
+          <!-- SECTION 1: CLIENT DETAILS -->
+          <div class="section-label">
+
+            <span>01</span>
+
+            <div>
+              <strong>Client details</strong>
+              <small>Who are we fitting today?</small>
+            </div>
+
+          </div>
+
+
+          <div class="field-grid two-columns">
+
+            <div class="field">
+
+              <label for="client-name">
+                Client name <span class="required-star">*</span>
+              </label>
+
+              <input
+                id="client-name"
+                name="clientName"
+                type="text"
+                placeholder="e.g. Aarav Mehta"
+                required
+              >
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="phone">
+                Phone number <span class="required-star">*</span>
+              </label>
+
+              <input
+                id="phone"
+                name="phone"
+                type="tel"
+                placeholder="+91 98765 43210"
+                required
+              >
+
+            </div>
+
+          </div>
+
+
+          <div class="field">
+
+            <label for="address">
+              Client address / village
+              <span class="optional">Optional</span>
+            </label>
+
+            <textarea
+              id="address"
+              name="address"
+              rows="2"
+              placeholder="House, street, village or city..."
+            ></textarea>
+
+          </div>
+
+
+          <!-- SECTION 2: MEASUREMENTS -->
+          <div class="section-label measurements-label">
+
+            <span>02</span>
+
+            <div>
+              <strong>Measurements</strong>
+              <small>Enter all measurements in inches (leave empty if not applicable)</small>
+            </div>
+
+            <span class="unit-pill">INCHES (IN)</span>
+
+          </div>
+
+
+          <!-- PANT MEASUREMENTS BLOCK -->
+          <div class="measurement-block">
+
+            <div class="block-heading">
+              <h3>Pant measurements</h3>
+              <span class="block-tag">Bottom wear</span>
+            </div>
+
+            <div class="field-grid three-columns">
+
+              <div class="field">
+                <label for="pant-length">Pant length</label>
+                <input
+                  id="pant-length"
+                  name="pantLength"
+                  type="number"
+                  step="0.25"
+                  min="0"
+                  placeholder="e.g. 40"
+                >
+              </div>
+
+              <div class="field">
+                <label for="waist">Waist</label>
+                <input
+                  id="waist"
+                  name="waist"
+                  type="number"
+                  step="0.25"
+                  min="0"
+                  placeholder="e.g. 32"
+                >
+              </div>
+
+              <div class="field">
+                <label for="crotch">Crotch / Seat</label>
+                <input
+                  id="crotch"
+                  name="crotch"
+                  type="number"
+                  step="0.25"
+                  min="0"
+                  placeholder="e.g. 12"
+                >
+              </div>
+
+              <div class="field">
+                <label for="hip-circumference">
+                  Hip circumference
+                </label>
+                <input
+                  id="hip-circumference"
+                  name="hipCircumference"
+                  type="number"
+                  step="0.25"
+                  min="0"
+                  placeholder="e.g. 38"
+                >
+              </div>
+
+              <div class="field">
+                <label for="thigh-circumference">
+                  Thigh circumference
+                </label>
+                <input
+                  id="thigh-circumference"
+                  name="thighCircumference"
+                  type="number"
+                  step="0.25"
+                  min="0"
+                  placeholder="e.g. 23"
+                >
+              </div>
+
+              <div class="field">
+                <label for="knee-circumference">
+                  Knee circumference
+                </label>
+                <input
+                  id="knee-circumference"
+                  name="kneeCircumference"
+                  type="number"
+                  step="0.25"
+                  min="0"
+                  placeholder="e.g. 16"
+                >
+              </div>
+
+              <div class="field">
+                <label for="ankle-circumference">
+                  Ankle circumference
+                </label>
+                <input
+                  id="ankle-circumference"
+                  name="ankleCircumference"
+                  type="number"
+                  step="0.25"
+                  min="0"
+                  placeholder="e.g. 14"
+                >
+              </div>
+
+            </div>
+
+            <div class="field-grid two-columns sub-fields">
+
+              <div class="field">
+
+                <label for="pant-type">
+                  Pant style / cut
+                </label>
+
+                <select
+                  id="pant-type"
+                  name="pantType"
+                >
+                  <option value="">Select pant style (Optional)</option>
+                  <option value="Formal trousers">Formal trousers</option>
+                  <option value="Chinos">Chinos</option>
+                  <option value="Jeans / Denim">Jeans / Denim</option>
+                  <option value="Kurta Pajama / Churidar">Kurta Pajama / Churidar</option>
+                  <option value="Dhoti / Traditional">Dhoti / Traditional</option>
+                  <option value="Other">Other</option>
+                </select>
+
+              </div>
+
+              <div class="field">
+
+                <label for="pocket-count">
+                  Number of pockets
+                </label>
+
+                <input
+                  id="pocket-count"
+                  name="pocketCount"
+                  type="number"
+                  min="0"
+                  max="12"
+                  placeholder="e.g. 4"
+                >
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- SHIRT MEASUREMENTS BLOCK -->
+          <div class="measurement-block">
+
+            <div class="block-heading">
+              <h3>Shirt measurements</h3>
+              <span class="block-tag">Top wear</span>
+            </div>
+
+            <div class="field-grid three-columns">
+
+              <div class="field">
+                <label for="shirt-length">Shirt length</label>
+                <input
+                  id="shirt-length"
+                  name="shirtLength"
+                  type="number"
+                  step="0.25"
+                  min="0"
+                  placeholder="e.g. 29"
+                >
+              </div>
+
+              <div class="field">
+                <label for="shoulder-width">Shoulder width</label>
+                <input
+                  id="shoulder-width"
+                  name="shoulderWidth"
+                  type="number"
+                  step="0.25"
+                  min="0"
+                  placeholder="e.g. 17"
+                >
+              </div>
+
+              <div class="field">
+                <label for="chest">Chest</label>
+                <input
+                  id="chest"
+                  name="chest"
+                  type="number"
+                  step="0.25"
+                  min="0"
+                  placeholder="e.g. 40"
+                >
+              </div>
+
+              <div class="field">
+                <label for="shirt-waist">Waist</label>
+                <input
+                  id="shirt-waist"
+                  name="shirtWaist"
+                  type="number"
+                  step="0.25"
+                  min="0"
+                  placeholder="e.g. 36"
+                >
+              </div>
+
+              <div class="field">
+                <label for="shirt-hip-circumference">
+                  Hip circumference
+                </label>
+                <input
+                  id="shirt-hip-circumference"
+                  name="shirtHipCircumference"
+                  type="number"
+                  step="0.25"
+                  min="0"
+                  placeholder="e.g. 40"
+                >
+              </div>
+
+              <div class="field">
+                <label for="arm-circumference">
+                  Arm hole / circumference
+                </label>
+                <input
+                  id="arm-circumference"
+                  name="armCircumference"
+                  type="number"
+                  step="0.25"
+                  min="0"
+                  placeholder="e.g. 15"
+                >
+              </div>
+
+              <div class="field">
+                <label for="bicep">Bicep</label>
+                <input
+                  id="bicep"
+                  name="bicep"
+                  type="number"
+                  step="0.25"
+                  min="0"
+                  placeholder="e.g. 13"
+                >
+              </div>
+
+              <div class="field">
+                <label for="sleeve-length">Sleeve length</label>
+                <input
+                  id="sleeve-length"
+                  name="sleeveLength"
+                  type="number"
+                  step="0.25"
+                  min="0"
+                  placeholder="e.g. 24"
+                >
+              </div>
+
+              <div class="field">
+                <label for="neck">Neck</label>
+                <input
+                  id="neck"
+                  name="neck"
+                  type="number"
+                  step="0.25"
+                  min="0"
+                  placeholder="e.g. 15.5"
+                >
+              </div>
+
+            </div>
+
+            <div class="field-grid two-columns sub-fields">
+
+              <div class="field">
+
+                <label for="collar-type">
+                  Collar type
+                </label>
+
+                <select
+                  id="collar-type"
+                  name="collarType"
+                >
+                  <option value="">Select collar type (Optional)</option>
+                  <option value="Spread collar">Spread collar</option>
+                  <option value="Button-down">Button-down</option>
+                  <option value="Mandarin / Chinese collar">Mandarin / Chinese collar</option>
+                  <option value="Cutaway collar">Cutaway collar</option>
+                  <option value="Band collar">Band collar</option>
+                  <option value="Kurta neck">Kurta neck</option>
+                  <option value="Other">Other</option>
+                </select>
+
+              </div>
+
+              <div class="field">
+
+                <label for="shirt-type">
+                  Shirt / Garment style
+                </label>
+
+                <select
+                  id="shirt-type"
+                  name="shirtType"
+                >
+                  <option value="">Select style (Optional)</option>
+                  <option value="Formal shirt">Formal shirt</option>
+                  <option value="Casual shirt">Casual shirt</option>
+                  <option value="Short kurta">Short kurta</option>
+                  <option value="Long kurta">Long kurta</option>
+                  <option value="Safari suit top">Safari suit top</option>
+                  <option value="Other">Other</option>
+                </select>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- SECTION 3: PHOTO & NOTES -->
+          <div class="section-label">
+
+            <span>03</span>
+
+            <div>
+              <strong>Reference & fit notes</strong>
+              <small>Optional design references, special fitting instructions</small>
+            </div>
+
+          </div>
+
+
+          <!-- PHOTO UPLOAD -->
+          <div class="photo-field">
+
+            <div>
+
+              <label for="sample-photo">
+                Sample reference photo
+                <span class="optional">Optional</span>
+              </label>
+
+              <small>
+                Upload a design sample, reference style, or cloth pattern photo
+              </small>
+
+            </div>
+
+            <div class="photo-upload-controls">
+              <input
+                id="sample-photo"
+                name="samplePhoto"
+                type="file"
+                accept="image/*"
+              >
+              <button
+                type="button"
+                id="remove-photo-btn"
+                class="remove-photo-btn"
+                style="display: none;"
+              >
+                ✕ Remove photo
+              </button>
+            </div>
+
+            <img
+              id="photo-preview"
+              alt="Selected sample preview"
+            >
+
+          </div>
+
+
+          <!-- NOTES -->
+          <div class="field">
+
+            <label for="notes">
+              Fit notes & special requests
+              <span class="optional">Optional</span>
+            </label>
+
+            <textarea
+              id="notes"
+              name="notes"
+              rows="3"
+              placeholder="e.g. Slim fit, double stitch on pocket, delivery required by next Friday..."
+            ></textarea>
+
+          </div>
+
+
+          <!-- FORM ACTIONS -->
+          <div class="order-actions">
+
+            <p
+              id="order-status"
+              role="status"
+              aria-live="polite"
+            ></p>
+
+            <button
+              class="primary-button"
+              type="submit"
+              id="save-order-btn"
+            >
+              Save client order
+              <span>→</span>
+            </button>
+
+          </div>
+
+        </form>
+
+      </section>
+
+
+      <!-- =========================
+           02: ALL ORDERS VIEW
+      ========================== -->
+      <section
+        id="orders-view"
+        class="view"
+        aria-labelledby="orders-title"
+      >
+
+        <div class="order-header">
+
+          <div class="form-intro">
+
+            <p class="eyebrow">
+              CLIENT DIRECTORY
+            </p>
+
+            <h2 id="orders-title">
+              All client orders
+            </h2>
+
+            <p>
+              Your saved fitting records and measurement history, ready when you need them.
+            </p>
+
+          </div>
+
+          <div class="header-actions">
+
+            <button
+              class="primary-button compact-btn"
+              id="new-order"
+              type="button"
+            >
+              + New order
+            </button>
+
+          </div>
+
+        </div>
+
+        <!-- SEARCH & FILTER BAR -->
+        <div class="search-bar-wrap">
+          <div class="search-input-box">
+            <span class="search-icon" aria-hidden="true">🔍</span>
+            <input
+              type="search"
+              id="orders-search"
+              placeholder="Search by client name, phone number, or order ID..."
+              aria-label="Search orders"
+            >
+            <button
+              type="button"
+              id="clear-search-btn"
+              class="clear-search-btn"
+              style="display: none;"
+              title="Clear search"
+            >
+              ✕
+            </button>
+          </div>
+          <div class="orders-count-tag" id="orders-filter-count">
+            Showing all orders
+          </div>
+        </div>
+
+        <!-- ORDERS LIST CONTAINER -->
+        <div
+          id="orders-list"
+          class="orders-list"
+        ></div>
+
+      </section>
+
+
+      <!-- =========================
+           03: ORDER DETAIL VIEW
+      ========================== -->
+      <section
+        id="order-detail-view"
+        class="view"
+        aria-labelledby="detail-title"
+      >
+
+        <div class="order-header detail-header-bar">
+
+          <div class="form-intro">
+
+            <p class="eyebrow" id="detail-order-number">
+              ORDER DETAILS
+            </p>
+
+            <h2 id="detail-title">
+              Client order
+            </h2>
+
+            <p id="detail-created-date">
+              Complete client information and measurements.
+            </p>
+
+          </div>
+
+          <div class="header-actions detail-actions">
+
+            <button
+              class="secondary-button"
+              id="print-order-btn"
+              type="button"
+              title="Print measurement sheet or save as PDF"
+            >
+              🖨️ Print slip
+            </button>
+
+            <button
+              class="text-button"
+              id="back-to-orders"
+              type="button"
+            >
+              ← All client orders
+            </button>
+
+          </div>
+
+        </div>
+
+        <!-- ORDER DETAIL SHEET CONTENT -->
+        <div
+          id="order-detail"
+          class="detail-content"
+        ></div>
+
+      </section>
+
+    </section>
+
+  </main>
+
+  <!-- Linked Script -->
+  <script src="script.js"></script>
+
+</body>
+</html>
